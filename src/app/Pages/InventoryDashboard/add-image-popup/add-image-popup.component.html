@@ -1,0 +1,119 @@
+
+<div mat-dialog-content>
+  <div class="flex items-center justify-center">
+    <div class="container mx-auto">
+        <div class="p-4 px-4 md:p-8">
+          <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
+            <div class="text-gray-600">
+              <p class="font-medium text-lg inline-flex">Product Details</p>
+             
+              <div class="flex items-center justify-center w-auto">
+                <label for="dropzone-file1" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 opacity-80 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                  <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                    <img [src]="url1" *ngIf="url1; else uploadIcon1" class="rounded-lg  w-96 h-[16rem]" >
+                    <ng-template #uploadIcon1>
+                      <svg class="w-10 h-10 mb-3 text-white font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                      <p class="mb-2 text-sm text-white dark:text-gray-400 font-semibold"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                      <p class="text-xs text-white dark:text-white font-semibold">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                    </ng-template>
+                  </div>
+
+                  
+                  <input id="dropzone-file1" type="file" (change)="handleFileInput($event)" class="hidden" accept="image/*"/>
+                </label>
+             
+            </div> 
+            <p class="font-medium text-lg inline-flex mt-4 p-4 justify-center" *ngIf="loading == false">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title-04a desc-04a" aria-live="polite" aria-busy="true" class="w-6 h-6 mr-3 animate animate-spin">
+                <circle cx="12" cy="12" r="10" class="stroke-slate-200" stroke-width="4" />
+                <path d="M12 22C14.6522 22 17.1957 20.9464 19.0711 19.0711C20.9464 17.1957 22 14.6522 22 12C22 9.34784 20.9464 6.8043 19.0711 4.92893C17.1957 3.05357 14.6522 2 12 2" class="stroke-pink-500" stroke-width="4" />
+              </svg>
+              Loading Product Details...
+            </p>
+            </div>
+  
+            <div class="lg:col-span-2">
+              <form [formGroup]="productForm" (ngSubmit)="SubmitProductData()" class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+
+                <div class="md:col-span-3">
+                  <label for="full_name">Category Name</label>
+                  <input type="text" name="full_name" id="categoryName" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value={{categoryName}} formControlName="categoryname"/>
+                </div>
+
+                <div class="md:col-span-2">
+                  <label for="full_name">Brand Name</label>
+                  <input type="text" name="full_name" id="brandName" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value={{brandName}} formControlName="brandname" />
+                </div>
+
+                <div class="md:col-span-5">
+                  <label for="full_name">Product Name</label>
+                  <input type="text" name="full_name" id="productName" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value={{productName}} formControlName="productname"/>
+                </div>
+
+                <div class="md:col-span-1">
+                  <label for="email">Storage</label>
+                  <input type="text" name="Memory" id="Memory" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value={{Memory}} formControlName="memory"/>
+                </div>
+
+                <div class="md:col-span-1">
+                  <label for="email">Ram</label>
+                  <input type="text" name="Ram" id="Ram" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value={{Ram}} formControlName="ram"/>
+                </div>
+
+                <div class="md:col-span-1">
+                  <label for="email">Camera</label>
+                  <input type="text" name="Camera" id="Camera" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value={{Camera}} formControlName="camera"/>
+                </div>
+
+                <div class="md:col-span-1">
+                  <label for="email">Battery</label>
+                  <input type="text" name="Battery" id="Battery" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value={{Battery}} formControlName="battery" />
+                </div>
+
+                <div class="md:col-span-1">
+                  <label for="email">Display</label>
+                  <input type="text" name="Display" id="Display" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value={{Display}} formControlName="display"/>
+                </div>
+  
+                <div class="md:col-span-3">
+                  <label for="address">Price</label>
+                  <input type="text" name="price" id="price" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value= "Rs.{{prices}}" formControlName="price"/>
+                </div>
+  
+                <div class="md:col-span-2">
+                  <label for="city">Quantity</label>
+                  <input type="text" name="city" id="quantity" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" formControlName="quantity"/>
+                </div>
+  
+                <div class="col-span-full">
+                  <label for="street-address" class="block text-lg font-medium leading-6 text-gray-900">Image Set</label>
+                  <div class="mt-2">
+                    <input type="file" id="imageFile" (change)="onFileChange()" 
+                      autocomplete="image-address"
+                      class="block w-full text-sm text-slate-500
+                      file:mr-4 file:py-2 file:px-4
+                      file:rounded-full file:border-0
+                      file:text-sm file:font-semibold
+                      file:bg-violet-50 file:text-pink-700
+                      hover:file:bg-pink-100">
+                  </div>
+                </div>
+        
+                <div class="md:col-span-5 text-right mt-4">
+                  <div class="mt-6 flex items-center justify-end gap-x-6">
+                    <button type="button" class="text-sm font-semibold leading-6 text-gray-900" (click)="ResetForm()">Reset</button>
+                    <button type="submit"
+                      class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add
+                      Product</button>
+                  </div>
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+  
+    </div>
+  </div>
+</div>
+

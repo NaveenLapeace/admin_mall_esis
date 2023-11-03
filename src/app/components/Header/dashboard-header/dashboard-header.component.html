@@ -1,0 +1,101 @@
+<!-- Navbar -->
+<div
+  class="relative top-25 left-0 w-full bg-gradient-to-r from-red-500 to-pink-500 md:flex-row md:flex-nowrap md:justify-start pb-56 pt-16 md:pt-8 flex items-center p-6"
+
+>
+  <div
+    class="w-full mx-auto items-center flex justify-between md:flex-nowrap flex-wrap md:px-1 container mx-auto pb-32 px-16"
+  >
+    <!-- Brand -->
+    <a
+      class="text-white text-lg uppercase hidden lg:inline-block font-semibold pl-5 font-['Maven Pro'] tracking-widest leading-loose "
+      href="#pablo"
+      >{{shopName}} Dashboard </a
+    >
+    <!-- Form -->
+    <form
+      class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
+    >
+      <div class="relative flex w-full flex-wrap items-stretch">
+        <!-- <span
+          class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
+          ><i class="fas fa-search"></i
+        ></span> -->
+        <!-- <input
+          type="text"
+          placeholder="Search here..."
+          class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10"
+        /> -->
+        <div>
+          <img
+            src='https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
+            alt="avatar image"
+            class="inline-flex items-center justify-center mr-2 text-white transition-all duration-200 ease-in-out w-14 h-14 text-sm rounded-full" />
+        </div>
+        <!-- <div class="relative inline-block text-left">
+          <div>
+            <button type="button" class="inline-flex w-full justify-center gap-x-1.5 bg-transparent px-3 py-2 text-sm font-semibold text-gray-900" id="menu-button" aria-expanded="true" aria-haspopup="true">
+              User Name
+              <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div> -->
+        
+          <!--
+            Dropdown menu, show/hide based on menu state.
+        
+            Entering: "transition ease-out duration-100"
+              From: "transform opacity-0 scale-95"
+              To: "transform opacity-100 scale-100"
+            Leaving: "transition ease-in duration-75"
+              From: "transform opacity-100 scale-100"
+              To: "transform opacity-0 scale-95"
+          -->
+          <div class="relative inline-block text-left" [class.open]="isOpen">
+            <div>
+              <button
+                type="button"
+                class="inline-flex mt-2 justify-center before:font-awesome before:leading-default before:duration-350 before:ease-soft lg:shadow-soft-3xl duration-250 w-full px-4 py-2 text-lg font-medium text-white "
+                id="menu-button"
+                aria-expanded="true"
+                aria-haspopup="true"
+                (click)="toggleDropdown()"
+              >
+                {{adminFirstName}} {{adminLastName}}
+                <svg
+                  class="-mr-1 ml-2 h-5 w-5 mt-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+
+                </svg>
+              </button>
+            </div>
+            <div
+              class="origin-top-right z-20 transition duration-700 ease-in-out drop-shadow-lg absolute right-0 mt-6 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-2"
+              [class.hidden]="!isOpen"
+            >
+              <div class="py-2" role="none">
+                <a [routerLink]="['/user-profile']" class="block px-4 py-2 transition duration-500 ease-in-out text-lg text-gray-700 hover:bg-gray-200 hover:text-gray-900" role="menuitem" tabindex="-1" id="menu-item-1">User Profile</a>
+                <a routerLink="/dashboard" class="block px-4 py-2 transition duration-500 ease-in-out text-lg text-gray-700 hover:bg-gray-200 hover:text-gray-900" role="menuitem" tabindex="-1" id="menu-item-2">Dashboard</a>
+                <a href="#" class="block px-4 py-2 transition duration-500 ease-in-out text-lg text-gray-700 hover:bg-gray-200 hover:text-gray-900" role="menuitem" tabindex="-1" id="menu-item-3"><button (click)="logout()">Log Out</button></a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </form>
+    
+    <!-- User -->
+    <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
+      <app-user-dropdown class="block"></app-user-dropdown>
+    </ul>
+  </div>
+</div>

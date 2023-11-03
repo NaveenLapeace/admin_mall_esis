@@ -1,0 +1,44 @@
+
+<div
+  class="relative flex flex-col h-full min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-2xl "
+>
+  <div class="rounded-t-2xl mb-0 px-4 py-3 bg-gray-50">
+    <div class="flex flex-wrap items-center">
+      <div class="relative w-full max-w-full flex-grow flex-1">
+        <h4 class="uppercase text-blueGray-400 mb-1 text-xs font-semibold">
+          Product Overview
+        </h4>
+        <h2 class="text-blueGray-700 text-xl font-semibold">
+          Total Products
+        </h2>
+      </div>
+      <mat-form-field class="w-64">
+        <mat-select placeholder="Select Category">
+          <mat-option>
+            For 15 Days
+          </mat-option>
+          <mat-option>
+            For 15 Days
+          </mat-option>
+          <mat-option>
+            For 15 Days
+          </mat-option>
+          <mat-option>
+            For 15 Days
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="flex-auto pb-2">
+    <div class="relative h-350-px ">
+      <fusioncharts
+      width="700"
+      height="400"
+      type="Column3d"
+      [dataSource]="dataSource"
+    >
+    </fusioncharts>
+    </div>
+  </div>
+</div>

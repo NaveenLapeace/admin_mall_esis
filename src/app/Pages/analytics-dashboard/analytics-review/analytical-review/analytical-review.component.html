@@ -1,0 +1,74 @@
+<!-- <div class="carousel-container">
+  <div class="carousel">
+    <div class="carousel-item" *ngFor="let item of items; let i = index" [ngClass]="{'active': i === currentIndex}">
+      <img [src]="item.image" alt="{{ item.caption }}" />
+      <h3>{{ item.caption }}</h3>
+    </div>
+  </div>
+  <button type="button" (click)="prevSlide()" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+        </svg>
+        <span class="sr-only" >Previous</span>
+    </span>
+</button>
+<button type="button"  (click)="nextSlide()" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+        </svg>
+        <span class="sr-only">Next</span>
+    </span>
+</button>
+</div> -->
+
+
+<div class="container">
+  <input type="radio" name="slider" id="item-1" checked>
+  <input type="radio" name="slider" id="item-2">
+  <input type="radio" name="slider" id="item-3">
+<div class="cards">
+  <label class="card" for="item-1" id="song-1">
+    <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-11-pro-max-4.jpg" alt="song">
+  </label>
+  <label class="card" for="item-2" id="song-2">
+    <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s23-plus-5g-3.jpg" alt="song">
+  </label>
+  <label class="card" for="item-3" id="song-3">
+    <img src="https://fdn.gsmarena.com/imgroot/reviews/23/xiaomi-redmi-note-12-pro/lifestyle/-1024w2/gsmarena_016.jpg" alt="song">
+  </label>
+</div>
+<div class="player">
+  <div class="upper-part">
+    <div class="play-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+      </svg>
+    </div>
+    <div class="info-area" id="test">
+      <label class="song-info" id="song-info-1">
+        <div class="title">I Phone 11 Pro</div>
+        <div class="sub-line">
+          <div class="subtitle">Apple</div>
+          <div class="time">4.2 Out of 5</div>
+        </div>
+      </label>
+      <label class="song-info" id="song-info-2">
+        <div class="title">Samsung Galaxy s23 </div>
+        <div class="sub-line">
+          <div class="subtitle">Samsung</div>
+          <div class="time">4.8 Out of 5</div>
+        </div>
+      </label>
+      <label class="song-info" id="song-info-3">
+        <div class="title">Redmi Note 12 </div>
+        <div class="sub-line">
+          <div class="subtitle">Redmi</div>
+          <div class="time">4.5 Out of 5</div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+</div>

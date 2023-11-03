@@ -1,0 +1,33 @@
+<div class="flex flex-wrap mt-6 -mx-3 ">
+    <div class=" px-3 mt-0 mb-6 w-full max-w-full ">
+      <div class="relative flex flex-col min-w-0  shadow-lg rounded-2xl bg-white border-0 border-solid shadow-xldark:shadow-dark-xl border-black-125 rounded-2xl bg-clip-border">
+        <div class="p-4 pb-0 mb-0 rounded-t-4">
+          <div class="flex justify-between">
+            <h2 class="mb-2 dark:text-black">Category Overview</h2>
+          </div>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="items-center w-full mb-4 align-top border-collapse border-gray-200 dark:border-white/40">
+            <thead>
+                <tr>
+                    <th class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
+                        <div class="flex items-center px-2 py-1">
+                          <div class="ml-6">
+                            <p class="mb-0 text-xs font-semibold leading-tight dark:text-black dark:opacity-60">Category Name:</p>
+                          </div>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="divide-y px-2 py-1 ml-6 pr-12 divide-gray-100 border-t border-gray-100" *ngIf="category">
+                    <tr class="hover:bg-gray-50"  *ngFor="let categories of category">
+                      <td class="px-6 py-4">
+                        {{ categories.name}}
+                      </td>
+                    </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>

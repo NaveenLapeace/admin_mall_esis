@@ -1,0 +1,149 @@
+<div>
+  <app-slide-bar></app-slide-bar>
+  <div class=" md:ml-64 bg-blueGray-200">
+    <app-dashboard-header></app-dashboard-header>
+    <div class="md:px-10 mx-auto w-full -m-24 -mt-80">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 pb-10 ">
+          <div class="col-span-1 max-w-xs transition duration-300 ease-in-out hover:scale-105">
+            <div
+              class="relative flex flex-col min-w-0 break-words bg-white shadow-2xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border ">
+              <div class="flex-auto p-4 ">
+                <div class="flex flex-row -mx-3">
+                  <div class="flex-none w-2/3 max-w-full px-3">
+                    <div>
+                      <p class="mb-0 font-sans font-semibold leading-normal uppercase text-sm">I Phone 14 Pro</p>
+                      <h5 class="mb-2 font-semibold dark:text-gray-900">
+                        Rs.
+                        <span class="font-semibold dark:text-gray-900">{{selectedShopName}}</span>
+                      </h5>
+                      <p class="mt-3 mb-0 text-gray-500 text-sm">
+                        <span class="text-green-500 mr-2">
+                          {{ percentageChange}}%
+                        </span>
+                        <span class="whitespace-nowrap">Since last top sales</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="px-3 text-right basis-1/3">
+                    <div
+                      class="inline-block w-12 h-12 text-center rounded-full bg-gradient-to-tl from-purple-500 to-violet-500">
+                      <i class="fa fa-coins text-lg relative top-3.5 text-white"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1 max-w-xs transition duration-300 ease-in-out hover:scale-105">
+            <div
+              class="relative flex flex-col min-w-0 break-words bg-white shadow-2xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+              <div class="flex-auto p-4">
+                <div class="flex flex-row -mx-3">
+                  <div class="flex-none w-2/3 max-w-full px-3">
+                    <div>
+                      <p class="mb-0 font-sans font-semibold leading-normal uppercase text-sm">Mac Book Pro</p>
+                      <h5 class="mb-2 font-bold dark:text-gray-900">Rs. 260,000</h5>
+                      <p class="mt-3 mb-0 text-gray-500 text-sm">
+                        <span class="text-green-500 mr-2">
+                          {{ percentageChange}}%
+                        </span>
+                        <span class="whitespace-nowrap">Since last top sales</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="px-3 text-right basis-1/3">
+                    <div class="inline-block w-12 h-12 text-center rounded-full bg-gradient-to-tl from-red-500 to-violet-500">
+                      <i class="fa fa-coins text-lg relative top-3.5 text-white"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1 max-w-xs transition duration-300 ease-in-out hover:scale-105">
+            <div
+              class="relative flex flex-col min-w-0 break-words bg-white shadow-2xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+              <div class="flex-auto p-4">
+                <div class="flex flex-row -mx-3">
+                  <div class="flex-none w-2/3 max-w-full px-3">
+                    <div>
+                      <p class="mb-0 font-sans font-semibold leading-normal uppercase text-sm">Samsung Galaxy S23</p>
+                      <h5 class="mb-2 font-bold dark:text-gray-900">Rs.230,000</h5>
+                      <p class="mt-3 mb-0 text-gray-500 text-sm">
+                        <span class="text-green-500 mr-2">
+                          {{ percentageChange}}%
+                        </span>
+                        <span class="whitespace-nowrap">Since last top sales</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="px-3 text-right basis-1/3">
+                    <div
+                      class="inline-block w-12 h-12 text-center rounded-full bg-gradient-to-tl from-amber-500 to-violet-500">
+                      <i class="fa fa-coins text-lg relative top-3.5 text-white"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative max-w-xs transition duration-300 ease-in-out hover:scale-105 flex flex-col min-w-0 break-words bg-white shadow-2xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+            <div class="flex-auto p-4">
+              <div class="flex flex-row -mx-3">
+                <div class="flex-none w-2/3 max-w-full px-3">
+                  <div>
+                    <p class="mb-0 font-sans font-semibold leading-normal uppercase text-sm">I Phone 13 Pro</p>
+                    <h5 class="mb-2 font-bold dark:text-gray-900">Rs.300,000</h5>
+                    <p class="mt-3 mb-0 text-gray-500 text-sm">
+                      <span class="text-green-500 mr-2">
+                        {{ percentageChange}}%
+                      </span>
+                      <span class="whitespace-nowrap">Since last top sales</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="px-3 text-right basis-1/3">
+                  <div class="inline-block w-12 h-12 text-center rounded-full bg-gradient-to-tl from-green-500 to-violet-500">
+                    <i class="fa fa-coins text-lg relative top-3.5 text-white"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="flex flex-wrap mt-6 -mx-3">
+          <div class="w-full max-w-full px-3 mt-0 lg:w-7/12 lg:flex-none">
+            <app-brand-charts></app-brand-charts>
+          </div>
+          <div class="w-full max-w-full px-3 lg:w-5/12 lg:flex-none">
+            <div class="relative w-full h-full rounded-2xl">
+              <div class="absolute w-full h-full transition-all duration-500 ">
+                <app-pie-chart></app-pie-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+        <div class="flex flex-wrap mt-6 -mx-3">
+          <div class="w-full max-w-full px-3 mt-0 lg:w-7/12 lg:flex-none">
+            <app-product-view></app-product-view>
+          </div>
+          <div class="w-full max-w-full px-3 lg:w-5/12 lg:flex-none">
+            <div class="relative w-full h-full rounded-2xl">
+              <div class="absolute w-full h-full transition-all duration-500 ">
+                <app-display-view></app-display-view>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,272 @@
+<nav
+  class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
+>
+  <div
+    class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
+  >
+    <!-- Toggler -->
+    <button
+      class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
+      type="button"
+      (click)="toggleCollapseShow('bg-white m-2 py-3 px-6')"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <!-- Brand -->
+    <a
+      [routerLink]="['/']"
+      class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+    >
+      <img src="../../../../assets/logo.png" class="h-18  w-34 mt-4 text-red-600 " className="logo" alt="logo tailus" />
+      <!-- <span class="hidden lg:block text-center font-semibold text-2xl font-['Maven Pro'] tracking-widest leading-loose "> Logo Design</span> -->
+    </a>
+    <!-- User -->
+    <ul class="md:hidden items-center flex flex-wrap list-none">
+      <li class="inline-block relative">
+        <app-notification-dropdown class="block"></app-notification-dropdown>
+      </li>
+      <li class="inline-block relative">
+        <app-user-dropdown class="block"></app-user-dropdown>
+      </li>
+    </ul>
+    <!-- Collapse -->
+    <div
+      class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded"
+      [ngClass]="collapseShow"
+    >
+      <!-- Collapse header -->
+      <div
+        class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200"
+      >
+        <div class="flex flex-wrap">
+          <div class="w-6/12">
+            <a
+              [routerLink]="['/']"
+              class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+            >
+              Notus Angular
+            </a>
+          </div>
+          <div class="w-6/12 flex justify-end">
+            <button
+              type="button"
+              class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
+              (click)="toggleCollapseShow('hidden')"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Form -->
+
+      <!-- Divider -->
+      <hr class="my-4 md:min-w-full" />
+      <!-- Heading -->
+      <!-- Navigation -->
+
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none text-center pr-5 -mx-5 pb-4">
+        <li class="text-center mb-2">
+          <a
+            routerLinkActive="list-item-active"
+            [routerLink]="['/dashboard']"
+            class="text-lg uppercase py-2.9 flex items-center px-4 font-semibold block dark:hover:bg-gradient-to-r from-red-500 to-pink-500 dark:hover:text-white transition duration-500 ease-in-out rounded-lg"
+            routerLinkActive
+            #adminDashboard="routerLinkActive"
+            [ngClass]="
+              adminDashboard.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+    
+            <div class=" r-2 flex items-center justify-center bg-center stroke-0 text-center xl:p-2.5">
+              <svg width="25px" height="25px" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="dashboard" class="icon glyph"><rect x="2" y="2" width="9" height="11" rx="2"></rect><rect x="13" y="2" width="9" height="7" rx="2"></rect><rect x="2" y="15" width="9" height="7" rx="2"></rect><rect x="13" y="11" width="9" height="11" rx="2"></rect></svg>
+            </div>
+            <span class="ml-1 duration-600 opacity-100 pointer-events-none ease-soft font-['Maven Pro'] tracking-widest leading-loose ">Dashboard</span>
+          </a>
+        </li>
+
+        <li class="items-center mb-2">
+          <a
+            routerLinkActive="list-item-active"
+            routerLink="/inventory"
+            class="text-lg uppercase py-2.9 flex items-center px-4 font-bold block dark:hover:bg-gradient-to-r from-red-500 to-pink-500 dark:hover:text-white transition duration-500 ease-in-out rounded-lg"
+            routerLinkActive
+            #adminSettings="routerLinkActive"
+            [ngClass]="
+              adminSettings.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+    
+          <div class=" r-2 flex items-center justify-center bg-center stroke-0 text-center xl:p-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M5.223 2.25c-.497 0-.974.198-1.325.55l-1.3 1.298A3.75 3.75 0 007.5 9.75c.627.47 1.406.75 2.25.75.844 0 1.624-.28 2.25-.75.626.47 1.406.75 2.25.75.844 0 1.623-.28 2.25-.75a3.75 3.75 0 004.902-5.652l-1.3-1.299a1.875 1.875 0 00-1.325-.549H5.223z" />
+              <path fill-rule="evenodd" d="M3 20.25v-8.755c1.42.674 3.08.673 4.5 0A5.234 5.234 0 009.75 12c.804 0 1.568-.182 2.25-.506a5.234 5.234 0 002.25.506c.804 0 1.567-.182 2.25-.506 1.42.674 3.08.675 4.5.001v8.755h.75a.75.75 0 010 1.5H2.25a.75.75 0 010-1.5H3zm3-6a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v3a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75v-3zm8.25-.75a.75.75 0 00-.75.75v5.25c0 .414.336.75.75.75h3a.75.75 0 00.75-.75v-5.25a.75.75 0 00-.75-.75h-3z" clip-rule="evenodd" />
+            </svg>            
+          </div>
+          <span class="ml-1 duration-600 opacity-100 pointer-events-none ease-soft font-['Maven Pro'] tracking-widest leading-loose ">Inventory</span>
+          </a>
+        </li>
+      
+        <li class="items-center mb-2">
+          <a
+            [routerLink]="['/order']"
+            class="text-lg uppercase py-2.9 flex items-center px-4 font-bold block dark:hover:bg-gradient-to-r from-red-500 to-pink-500 dark:hover:text-white transition duration-500 ease-in-out rounded-lg"
+            routerLinkActive
+            #adminTables="routerLinkActive"
+            [ngClass]="
+              adminTables.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <div class=" r-2 flex items-center justify-center bg-center stroke-0 text-center xl:p-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-.673-.05A3 3 0 0015 1.5h-1.5a3 3 0 00-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6zM13.5 3A1.5 1.5 0 0012 4.5h4.5A1.5 1.5 0 0015 3h-1.5z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625V9.375zm9.586 4.594a.75.75 0 00-1.172-.938l-2.476 3.096-.908-.907a.75.75 0 00-1.06 1.06l1.5 1.5a.75.75 0 001.116-.062l3-3.75z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <span class="ml-1 duration-600 opacity-100 pointer-events-none ease-soft font-['Maven Pro'] tracking-widest leading-loose ">Order</span>
+          </a>
+        </li>
+
+        <li class="items-center mb-2">
+          <a
+          [routerLink]="['/payments']"
+            class="text-lg uppercase py-2.9 flex items-center px-4 font-bold block dark:hover:bg-gradient-to-r from-red-500 to-pink-500 dark:hover:text-white transition duration-500 ease-in-out rounded-lg"
+            routerLinkActive
+            #adminPayment="routerLinkActive"
+            [ngClass]="
+              adminPayment.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+          <div class=" r-2 flex items-center justify-center bg-center stroke-0 text-center xl:p-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M4.5 3.75a3 3 0 00-3 3v.75h21v-.75a3 3 0 00-3-3h-15z" />
+              <path fill-rule="evenodd" d="M22.5 9.75h-21v7.5a3 3 0 003 3h15a3 3 0 003-3v-7.5zm-18 3.75a.75.75 0 01.75-.75h6a.75.75 0 010 1.5h-6a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <span class="ml-1 duration-600 opacity-100 pointer-events-none ease-soft font-['Maven Pro'] tracking-widest leading-loose ">Payment</span>
+          </a>
+        </li>
+
+        <li class="items-center mb-2">
+          <a
+            [routerLink]="['/reports']"
+            class="text-lg uppercase py-2.9 flex items-center px-4 font-bold block dark:hover:bg-gradient-to-r from-red-500 to-pink-500 dark:hover:text-white transition duration-500 ease-in-out rounded-lg"
+            routerLinkActive
+            #adminReports="routerLinkActive"
+            [ngClass]="
+              adminReports.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+      
+            <div class=" flex items-center justify-center bg-center text-center xl:p-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-.673-.05A3 3 0 0015 1.5h-1.5a3 3 0 00-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6zM13.5 3A1.5 1.5 0 0012 4.5h4.5A1.5 1.5 0 0015 3h-1.5z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625V9.375zM6 12a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V12zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75zM6 15a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V15zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75zM6 18a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V18zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+              </svg>
+                                       
+            </div>
+            <span class=" duration-600 opacity-100 pointer-events-none ease-soft font-['Maven Pro'] tracking-widest leading-loose ">Reports</span>
+          </a>
+        </li>
+
+        <li class="items-center mb-2">
+          <a
+            [routerLink]="['/analytics']"
+            class="text-lg uppercase py-2.9 flex items-center px-4 font-bold block dark:hover:bg-gradient-to-r from-red-500 to-pink-500 dark:hover:text-white transition duration-500 ease-in-out rounded-lg"
+            routerLinkActive
+            #adminAnalytics="routerLinkActive"
+            [ngClass]="
+              adminAnalytics.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+      
+            <div class=" flex items-center justify-center bg-center text-center xl:p-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M2.25 2.25a.75.75 0 000 1.5H3v10.5a3 3 0 003 3h1.21l-1.172 3.513a.75.75 0 001.424.474l.329-.987h8.418l.33.987a.75.75 0 001.422-.474l-1.17-3.513H18a3 3 0 003-3V3.75h.75a.75.75 0 000-1.5H2.25zm6.54 15h6.42l.5 1.5H8.29l.5-1.5zm8.085-8.995a.75.75 0 10-.75-1.299 12.81 12.81 0 00-3.558 3.05L11.03 8.47a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l2.47-2.47 1.617 1.618a.75.75 0 001.146-.102 11.312 11.312 0 013.612-3.321z" clip-rule="evenodd" />
+              </svg>                          
+            </div>
+            <span class=" duration-600 opacity-100 pointer-events-none ease-soft font-['Maven Pro'] tracking-widest leading-loose ">Analytics</span>
+          </a>
+        </li>
+
+      </ul>
+
+      <!-- Divider -->
+      <hr class="my-4 md:min-w-full" />
+      <!-- Heading -->
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4 text-center  -mx-5">
+
+        <!-- <li class="items-center mb-2">
+          <a
+            [routerLink]="['/voice']"
+            class="text-lg uppercase py-2.9 flex items-center px-4 font-bold block dark:hover:bg-gradient-to-r from-red-500 to-pink-500 dark:hover:text-white transition duration-500 ease-in-out rounded-lg"
+          >
+          <div class=" flex items-center justify-center bg-center stroke-0 text-center xl:p-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path fill-rule="evenodd" d="M12 6.75a5.25 5.25 0 016.775-5.025.75.75 0 01.313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 011.248.313 5.25 5.25 0 01-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 112.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0112 6.75zM4.117 19.125a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z" clip-rule="evenodd" />
+              <path d="M10.076 8.64l-2.201-2.2V4.874a.75.75 0 00-.364-.643l-3.75-2.25a.75.75 0 00-.916.113l-.75.75a.75.75 0 00-.113.916l2.25 3.75a.75.75 0 00.643.364h1.564l2.062 2.062 1.575-1.297z" />
+              <path fill-rule="evenodd" d="M12.556 17.329l4.183 4.182a3.375 3.375 0 004.773-4.773l-3.306-3.305a6.803 6.803 0 01-1.53.043c-.394-.034-.682-.006-.867.042a.589.589 0 00-.167.063l-3.086 3.748zm3.414-1.36a.75.75 0 011.06 0l1.875 1.876a.75.75 0 11-1.06 1.06L15.97 17.03a.75.75 0 010-1.06z" clip-rule="evenodd" />
+            </svg>            
+          </div>
+          <span class="duration-300 opacity-100 pointer-events-none ease-soft font-['Maven Pro'] tracking-widest leading-loose ">Voice Audio</span>
+          </a>
+        </li> -->
+
+        <li class="items-center mb-2">
+          <a
+            [routerLink]="['/user-profile']"
+            class="text-lg uppercase py-2.9 flex items-center px-4 font-bold block dark:hover:bg-gradient-to-r from-red-500 to-pink-500 dark:hover:text-white transition duration-500 ease-in-out rounded-lg"
+            routerLinkActive
+            #adminAudio="routerLinkActive"
+            [ngClass]="
+              adminAudio.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+      
+            <div class=" flex items-center justify-center bg-center stroke-0 text-center xl:p-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <span class=" duration-300 opacity-100 pointer-events-none ease-soft font-['Maven Pro'] tracking-widest leading-loose ">User Profile</span>
+          </a>
+        </li>
+        
+
+        <!-- <li class="items-center mb-2">
+          <a
+            [routerLink]="['/settings']"
+            class="text-lg uppercase py-2.9 flex items-center px-4 font-bold block dark:hover:bg-gradient-to-r from-red-500 to-pink-500 dark:hover:text-white transition duration-500 ease-in-out rounded-lg"
+          >
+          <div class=" flex items-center justify-center bg-center stroke-0 text-center xl:p-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path fill-rule="evenodd" d="M12 6.75a5.25 5.25 0 016.775-5.025.75.75 0 01.313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 011.248.313 5.25 5.25 0 01-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 112.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0112 6.75zM4.117 19.125a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z" clip-rule="evenodd" />
+              <path d="M10.076 8.64l-2.201-2.2V4.874a.75.75 0 00-.364-.643l-3.75-2.25a.75.75 0 00-.916.113l-.75.75a.75.75 0 00-.113.916l2.25 3.75a.75.75 0 00.643.364h1.564l2.062 2.062 1.575-1.297z" />
+              <path fill-rule="evenodd" d="M12.556 17.329l4.183 4.182a3.375 3.375 0 004.773-4.773l-3.306-3.305a6.803 6.803 0 01-1.53.043c-.394-.034-.682-.006-.867.042a.589.589 0 00-.167.063l-3.086 3.748zm3.414-1.36a.75.75 0 011.06 0l1.875 1.876a.75.75 0 11-1.06 1.06L15.97 17.03a.75.75 0 010-1.06z" clip-rule="evenodd" />
+            </svg>            
+          </div>
+          <span class="duration-300 opacity-100 pointer-events-none ease-soft font-['Maven Pro'] tracking-widest leading-loose ">Settings</span>
+          </a>
+        </li> -->
+
+      </ul>
+
+      <!-- Divider -->
+      <hr class="my-4 md:min-w-full" />
+    </div>
+  </div>
+</nav>

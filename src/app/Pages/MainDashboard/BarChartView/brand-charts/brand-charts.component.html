@@ -1,0 +1,31 @@
+<div
+  class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-2xl "
+>
+  <div class="rounded-t-2xl mb-0 px-4 py-3 bg-gray-50">
+    <div class="flex flex-wrap items-center">
+      <div class="relative w-full max-w-full flex-grow flex-1">
+        <h4 class="uppercase text-blueGray-400 mb-1 text-xs font-semibold">
+          Product Overview
+        </h4>
+        <h2 class="text-blueGray-700 text-xl font-semibold">
+          Total Products
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="p-4 flex-auto pb-2">
+    <div class="relative h-350-px mt-14">
+      <canvas id="bar-chart" class="rounded-bars"></canvas>
+    </div>
+  </div>
+</div>
+
+<div>
+  <ejs-chart style='display:block' id='chartcontainer'  [primaryXAxis]='primaryXAxis'>
+    <e-series-collection>
+        <e-series [dataSource]="data" type='Bar' xName='x' yName='y' > </e-series>    
+    </e-series-collection>
+  </ejs-chart>
+</div>
+
+
